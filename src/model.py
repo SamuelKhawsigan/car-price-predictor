@@ -2,13 +2,13 @@ import pandas as pd
 import joblib
 import os
 
-# Get the path of the current file to help locate the .pkl file
-# This ensures it works even if you run the script from different folders
+# path of the current file to help locate the .pkl file
+# make sure it works even if you run the script from different folders
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL_PATH = os.path.join(BASE_DIR, 'malaysia_car_predictor.pkl')
 
 def load_trained_model():
-    """Safely loads the Random Forest model."""
+    """loads the Random Forest model."""
     if not os.path.exists(MODEL_PATH):
         raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
     return joblib.load(MODEL_PATH)
@@ -24,7 +24,7 @@ def get_prediction(age, mileage, brand='Other'):
     feature_names = model.feature_names_in_
     input_df = pd.DataFrame(0, index=[0], columns=feature_names)
     
-    # Set the numeric features
+    # Set the car age and mileage
     input_df['Car_Age'] = age
     input_df['Milleage'] = mileage
     
@@ -37,7 +37,7 @@ def get_prediction(age, mileage, brand='Other'):
     return round(prediction, 2)
 
 if __name__ == "__main__":
-    # Quick test to make sure it works
+    #test to make sure it works
     print("Testing Model Logic...")
     try:
         test_val = get_prediction(age=5, mileage=60000, brand='Honda')

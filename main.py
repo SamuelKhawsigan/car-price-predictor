@@ -2,12 +2,12 @@ from src.model import get_prediction
 import sys
 
 def run_predictor():
-    print("========================================")
+    print("---------------------------------------")
     print(" MALAYSIA USED CAR PRICE PREDICTOR ")
-    print("========================================\n")
+    print("---------------------------------------\n")
     
     try:
-        # 1. Capture User Input
+        # Capture User Input
         age = float(input("Enter the car's age (e.g., 5 for 2021 model): "))
         mileage = float(input("Enter the total mileage (KM): "))
         
@@ -18,19 +18,19 @@ def run_predictor():
         if not brand:
             brand = 'Other'
 
-        # 2. Get the Value from our Model
+        # Get the Value from Model
         estimated_price = get_prediction(age, mileage, brand)
 
-        # 3. Display Result
+        #  Display Result
         print("\n" + "-"*40)
         print(f"ESTIMATED MARKET VALUE: RM {estimated_price:,.2f}")
         print("-"*40)
         print("Disclaimer: This is an ML estimate for cars < RM 200k.")
         
     except ValueError:
-        print("\n❌ Error: Please enter numbers for Age and Mileage.")
+        print("Error: Please enter numbers for Age and Mileage.")
     except Exception as e:
-        print(f"\n❌ An unexpected error occurred: {e}")
+        print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
     run_predictor()
