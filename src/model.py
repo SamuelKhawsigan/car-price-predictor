@@ -5,7 +5,7 @@ import os
 # Get the path of the current file to help locate the .pkl file
 # This ensures it works even if you run the script from different folders
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MODEL_PATH = os.path.join(BASE_DIR, 'notebooks/malaysia_car_predictor.pkl')
+MODEL_PATH = os.path.join(BASE_DIR, 'malaysia_car_predictor.pkl')
 
 def load_trained_model():
     """Safely loads the Random Forest model."""
