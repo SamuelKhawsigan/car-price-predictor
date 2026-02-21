@@ -1,6 +1,37 @@
+# --- Python / Environment ---
+# Ignore the virtual environment (This is heavy and local to your PC)
+.venv/
 venv/
-*.pyc
-__pycache__/
-.DS_Store
-*.csv
+ENV/
+env/
+pyvenv.cfg
 
+# --- Python Cache ---
+# Ignore compiled Python files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Jupyter Notebooks ---
+# Ignore temporary checkpoints created by VS Code/Jupyter
+.ipynb_checkpoints/
+
+# --- Data & Large Files ---
+# If your dataset is huge (e.g. >100MB), you would ignore it here. 
+# For now, keep your .csv in the repo unless it grows too large.
+# *.csv
+
+# --- IDE / Editor Settings ---
+# Ignore VS Code specific settings that might conflict with others
+.vscode/
+.idea/
+
+# --- OS Specific ---
+# System-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Project Specific ---
+# If you create temporary log files
+*.log
